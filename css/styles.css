@@ -1,0 +1,323 @@
+/* 
+  styles.css 
+  This file contains the CSS styles for the artist website. 
+  It includes styles for the header, footer, sidebar, and the five segments of the homepage to ensure a responsive design.
+*/
+
+/* General reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background image */
+body {
+    background: url('../sitepictures/chosen-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+hheader h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+aside {/* Adjust the menu position and remove background color */
+    position: fixed;
+    top: 20%; /* Lower the menu on the screen */
+    left: 0;
+    width: 200px;
+    height: auto;
+    color: #fff;
+    padding: 1rem;
+    overflow-y: auto;
+    background: none; /* Remove background color */
+}
+
+aside h2 {
+    margin-bottom: 1rem;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside nav ul li {
+    margin: 1.5rem 0; /* Space between items */
+}
+
+aside nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-family: Arial, sans-serif; /* Example font family */
+    font-size: 16px; /* Example font size */
+    font-weight: bold; /* Example font weight */
+}
+
+/* Menu icon for mobile */
+.menu-icon {
+    display: none; /* Hidden by default (desktop view) */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-icon div {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+/* Hide the menu by default on mobile */
+.menu {
+    display: block; /* Default for desktop */
+}
+
+main {
+    padding: 1rem;
+    /* Ensures at least 200px space on the left and 10 on the right, but centers when possible */
+    margin-left: max(200px, calc(50vw - 500px));
+    margin-right: max(10px, calc(50vw - 500px));
+}
+
+main section {
+    margin: 2rem auto;
+    max-width: 1000px;
+    background: #f9f9f9;
+    scroll-margin-block-start: 150px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery grid for desktop */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: auto; /* Keeps original ratio */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/* Gallery swipe for mobile */
+.gallery-swipe {
+    display: none; /* Hidden by default */
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.gallery-swipe img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain; /* Keeps original aspect ratio */
+    margin-right: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+/* Gallery overlay */
+.gallery-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.gallery-overlay img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2100;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #000;
+}
+
+/* News section layout */
+.news-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#news-photo {
+    width: 180px;      /* Adjust as needed */
+    height: 180px;     /* Adjust as needed */
+    object-fit: cover; /* Ensures the image fills the box */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0;
+    }
+
+    .menu {
+        display: none; /* Hidden by default on mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background: #fff;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        z-index: 999;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu ul li {
+        margin: 1rem 0;
+    }
+
+    .menu ul li a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
+    }
+
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    main section {
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        aspect-ratio: auto; /* Keeps original ratio */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        background: #fff;
+        display: block;
+        margin: 0 auto; /* Center images */
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    .gallery-swipe {
+        display: none;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 1rem 0;
+    }
+    .gallery-swipe img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        max-height: 180px;
+        object-fit: contain; /* Keeps original aspect ratio */
+        margin-right: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        background: #fff;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+    }
+
+    .news-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #news-photo {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .gallery-grid {
+        display: none;
+    }
+    .gallery-swipe {
+        display: block;
+    }
+}
