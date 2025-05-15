@@ -1,4 +1,4 @@
-# Artist Website
+# Max Jansson Website
 
 ## Overview
 This project is a responsive artist website designed to showcase the artist's work, provide updates, and facilitate contact with fans and clients. The website is structured to include various segments that highlight the latest news, media, gallery, and contact information.
