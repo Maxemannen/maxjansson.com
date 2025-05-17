@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Website</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to the CSS file for styling -->
+</head>
+<body>
+    <script src="js/scripts.js"></script> <!-- Link to the JavaScript file for functionality -->
+    
+    <header>
+        <img id="logo" alt="Logo"> <!-- Logo dynamically loaded -->
+        <h1>Max Jansson</h1> <!-- Main title of the website -->
+    </header>
+
+    <aside>
+        <div class="menu-icon" onclick="toggleMenu()"> <!-- Menu icon for mobile -->
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#latest-news">Latest News</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="gallery/">Galleria</a></li> <!-- Link to the gallery page -->
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <section id="latest-news" class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-content">
+                <img id="news-photo" alt="News Photo">
+                <p>Latest updates about the artist.</p>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            <p>General news and announcements.</p> <!-- Placeholder for news content -->
+        </section>
+
+        <section id="media">
+            <h2>Media</h2>
+            <p>Media appearances and interviews.</p> <!-- Placeholder for media content -->
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid"></div> <!-- Grid for desktop -->
+            <div class="gallery-swipe"></div> <!-- Swipe gallery for mobile -->
+            <p>Featured artworks and exhibitions.</p> <!-- Placeholder for gallery content -->
+            <div id="gallery-overlay" class="gallery-overlay" style="display:none;">
+                <span class="close-btn" id="close-overlay">&times;</span>
+                <img id="overlay-img" src="" alt="Enlarged gallery image">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact information and social media links.</p> <!-- Placeholder for contact content -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Artist Name. All rights reserved.</p> <!-- Footer with copyright information -->
+    </footer>
+
+</body>
+</html>
