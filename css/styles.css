@@ -211,12 +211,14 @@ footer {
 @media (max-width: 768px) {
 
     body {
-    background: url('../sitepictures/chosen-background.jpg') no-repeat right top fixed;
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+        background: url('../sitepictures/chosen-background.jpg') no-repeat;
+        background-size: cover;
+        background-position: right top; /* Ensures top right is shown */
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
     }
 
     aside {
