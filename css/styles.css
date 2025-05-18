@@ -211,7 +211,7 @@ footer {
 @media (max-width: 768px) {
 
     body {
-    background: url('../sitepictures/chosen-background.jpg') no-repeat right fixed;
+    background: url('../sitepictures/chosen-background.jpg') no-repeat right top fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     line-height: 1.6;
