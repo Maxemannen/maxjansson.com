@@ -22,6 +22,9 @@ body {
 }
 
 header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     background: #333;
     color: #fff;
     text-align: center;
@@ -269,6 +272,7 @@ footer {
     main section {
         max-width: 100%;
         margin: 1rem auto;
+        text-align: right;
     }
 
     .gallery-grid {
