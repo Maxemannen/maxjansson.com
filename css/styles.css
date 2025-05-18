@@ -267,6 +267,7 @@ footer {
     main {
         margin-left: 0;
         padding: 1rem;
+        text-align: right;
     }
 
     main section {
